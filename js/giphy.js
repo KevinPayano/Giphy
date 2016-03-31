@@ -46,6 +46,17 @@
 //     console.log(data[0].url);
 //   }
 //
+$(document).ready(function() {
+ 
+    
+    $("#submit").click(function() {
+      getGiphyGifs($("#query").val(), function(data) {
+        console.log(data[0].url);
+      });
+
+
+    });
+});
 function getGiphyGifs(query, callback) {
   var endpoint = "https://api.giphy.com/v1/gifs/search";
   var parameters = {
